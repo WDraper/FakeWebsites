@@ -1,0 +1,199 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+    <head>
+        <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=yes">
+        <title>UT EID Login</title>
+        
+
+        <link rel="shortcut icon" type="image/png" href="https://login.utexas.edu/openam/images/utlogin-favicon.ico">
+        <link rel="stylesheet" type="text/css" media="Screen" href="https://login.utexas.edu/openam/css/compiled/login.css">
+        <!--[if IE 6]><link rel="stylesheet" href="/openam/css/ie6.css" type="text/css" media="Screen" /><![endif]-->
+        <!--[if IE 7]><link rel="stylesheet" href="/openam/css/ie7.css" type="text/css" media="Screen" /><![endif]-->
+        <!--[if IE 8]><link rel="stylesheet" href="/openam/css/ie8.css" type="text/css" media="Screen" /><![endif]-->
+        <!--[if IE 9]><link rel="stylesheet" href="/openam/css/ie9.css" type="text/css" media="Screen" /><![endif]-->
+        <script language="JavaScript" src="https://login.utexas.edu/openam/js/auth.js" type="text/javascript"></script>
+        <script language="JavaScript" src="https://login.utexas.edu/openam/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+        <script language="JavaScript" src="https://login.utexas.edu/openam/js/browserVersion.js" type="text/javascript"></script>
+        <script language="JavaScript" src="https://login.utexas.edu/openam/js/auth-ut.js" type="text/javascript"></script>
+
+        
+            <script language="JavaScript" type="text/javascript">
+                var defaultBtn = 'Submit';
+                var elmCount = 0;
+
+                /**
+                 * submit form with given button value
+                 *
+                 * @param value of button
+                 */
+                function LoginSubmit(value) {
+                    aggSubmit();
+                    var hiddenFrm = document.forms['Login'];
+
+                    if (hiddenFrm != null) {
+                        hiddenFrm.elements['IDButton'].value = value;
+                        if (this.submitted) {
+                            alert("The request is currently being processed");
+                        }
+                        else {
+                            this.submitted = true;
+                            hiddenFrm.submit();
+                        }
+                    }
+                }
+            </script>
+        
+
+        <script language="JavaScript" type="text/javascript">
+            <!-- Page is loaded. Initializations. -->
+            jQuery(document).ready(function() {
+                // placeCursorOnFirstElm();
+                document.cookie = "SC=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=.utexas.edu; path=/";
+                disableLoginAfter(5 * 1000 * 60 /*5 minutes in ms*/);
+                jQuery("form").attr("action", "/login/UI/Login")
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div id="container">
+
+            <!-- wordmark is the new stacked UT wordmark -->
+            <div id="wordmark">
+                <a href="http://www.utexas.edu">
+                    <img src="https://login.utexas.edu/openam/images/wordmark-small-whte-stacked.png" width="100" height="44"
+                         alt="The University of Texas at Austin" />
+                </a>
+            </div>
+            <div id="ie8_shadow"></div>
+            <!-- content starts here -->
+            <div id="content">
+                <div id="loginForm">
+                    <div id="message"></div>  <!-- this may be a graphic at some point, but I'll push for the web version to be text. -->
+                    
+
+                    
+                        <form   name="Login"  action="https://login.utexas.edu/openam/UI/Login"  method="post">
+                            
+                                <script language="javascript" type="text/javascript">
+                                    elmCount++;
+                                </script>
+                                
+                                
+                                
+                            
+                                <script language="javascript" type="text/javascript">
+                                    elmCount++;
+                                </script>
+                                
+                                    <div id="eid">
+                                            <label for="IDToken1">
+                                                 UT EID 
+                                                
+                                            </label>
+                                            <br/>
+                                            <input class="input_pad" type="text" name="IDToken1" id="IDToken1" value=""
+                                                   autocomplete="off" size="30" aria-required="true" autofocus="autofocus" />
+                                    </div>
+                                
+                                
+                                
+                            
+                                <script language="javascript" type="text/javascript">
+                                    elmCount++;
+                                </script>
+                                
+                                
+                                    <div id="password">
+                                        <br/>
+                                        <label for="IDToken2">
+                                             PASSWORD 
+                                            
+                                        </label>
+                                        <br/>
+                                        <input class="input_pad" type="password" name="IDToken2" id="IDToken2" value=""
+                                               autocomplete="off" size="30" aria-required="true" >
+                                    </div>
+                                
+                                
+                            
+
+                            
+                            
+                            
+    
+    
+                            <input type="hidden" name="login_uri" value="/login/SSORedirect/metaAlias/utaustin/idp" />
+                            <input type="hidden" name="login_method" value="GET" />
+    
+                            <input type="hidden" name="login_param_SAMLRequest" value="fZJdT4MwFIb/Cun9KCDBrRkkuF24ZDoyphfemALH0aS02NPq/PfC5se8cLc9p8/b90nnyDvZs9zZVm3h1QFa79BJhew4SIkzimmOApniHSCzNSvzuzWL/ID1Rltda0m8HBGMFVottELXgSnBvIkaHrbrlLTW9sgoRdR+9+E7CweOPjSOlq2oKi3Btv4wpCM4osWm3BFvObxEKD4yfwlS74U6BxwPaFluttAIA7WlHVieS8GROsvdyKCi6Ym3WqbkmVdQh3w6m9YRJGEUVy98FodNUiVxGIZ8NqwhOlgptFzZlERBeD0J4kkU7IKEXU1ZED0Rr/iqfSNUI9T+sqPqtITsdrcrJqduj2Dw2GtYINl8NM2OwebM/WUs/xZOsv/14o/eOT0LOSX27H6grpaFlqL+8HIp9fvCALeQkpDQ7HTl79fIPgE=" />
+    
+                            
+                                
+                                
+                                    <div>
+                                        <img src="https://login.utexas.edu/openam/images/dot.gif" width="1" height="15" alt="" />
+                                        <div id="login_btn">
+                                            <input name="Login.Submit" type="submit" onclick="LoginSubmit('Log In'); return false;" class="login button primary" value="Log In" />
+                                        </div>
+                                    </div>
+                                
+                            
+                            <script language="javascript" type="text/javascript">
+                                if (elmCount != null) {
+                                    document.write("<input name=\"IDButton"  + "\" type=\"hidden\">");
+                                }
+                            </script>
+                            <input type="hidden" name="goto" value="/SSORedirect/metaAlias/utaustin/idp?ReqID=_abec1a898c2e6124bfa941d6b64111a9&index=null&acsURL=https%3A%2F%2Fsso.my.utexas.edu%2FShibboleth.sso%2FSAML2%2FPOST&spEntityID=https%3A%2F%2Fsso.my.utexas.edu%2Fshibboleth&binding=urn%3Aoasis%3Anames%3Atc%3ASAML%3A2.0%3Abindings%3AHTTP-POST" />
+                            <input type="hidden" name="SunQueryParamsString" value="QU1BdXRoQ29va2llLXByb2Q9JmZvcndhcmQ9dHJ1ZSZyZWFsbT0vdXRhdXN0aW4mU0FNTFJlcXVlc3Q9ZlpKZFQ0TXdGSWIvQ3VuOUtDREJyUmtrdUYyNFpEb3lwaGZlbUFMSDBhUzAyTlBxL1BmQzVzZThjTGM5cDgvYjkwbm55RHZaczl6WlZtM2gxUUZhNzlCSmhldzRTSWt6aW1tT0FwbmlIU0N6TlN2enV6V0wvSUQxUmx0ZGEwbThIQkdNRlZvdHRFTFhnU25CdklrYUhyYnJsTFRXOXNnb1JkUis5K0U3Q3dlT1BqU09scTJvS2kzQnR2NHdwQ000b3NXbTNCRnZPYnhFS0Q0eWZ3bFM3NFU2Qnh3UGFGbHV0dEFJQTdXbEhWaWVTOEdST3N2ZHlLQ2k2WW0zV3Fia21WZFFoM3c2bTlZUkpHRVVWeTk4Rm9kTlVpVnhHSVo4TnF3aE9sZ3B0RnpabEVSQmVEMEo0a2tVN0lLRVhVMVpFRDBSci9pcWZTTlVJOVQrc3FQcXRJVHNkcmNySnFkdWoyRHcyR3RZSU5sOE5NMk93ZWJNL1dVcy94Wk9zdi8xNG8vZU9UMExPU1gyN0g2Z3JwYUZscUwrOEhJcDlmdkNBTGVRa3BEUTdIVGw3OWZJUGdFPSZSZWxheVN0YXRlPXNzOm1lbTowNTUzZTgyYWFhN2RkNjY4NGFmMGRjMTdiODZjMzRmNGJjMmVlZWE3NTA0ZDQ5MjRmZTRhZmMzNWE5MTI4ODQ1JnNwRW50aXR5SUQ9aHR0cHM6Ly9zc28ubXkudXRleGFzLmVkdS9zaGliYm9sZXRo" />
+                            <input type="hidden" name="encoded" value="false" />
+                        <input type="hidden" name="gx_charset" value="UTF-8"/></form>
+                    
+                </div> <!-- end of loginForm -->
+
+                <div id="questions">  <!-- links for users -->
+                    <a href="https://idmanager.its.utexas.edu/eid_self_help/?fp="> I forgot my UT EID or password.</a>
+                    <a href="https://idmanager.its.utexas.edu/eid_self_help/?geid=">I need a UT EID.</a>
+                    <a href="https://idmanager.its.utexas.edu/eid_self_help">Help</a>
+                </div>  <!--end of questions -->
+
+                <div id="license_info">
+                    <p>
+                        Unauthorized use of UT Austin computer and networking resources is prohibited.
+                        If you log in, you acknowledge your awareness of and concurrence with the
+                        <a href="http://security.utexas.edu/policies/aup.html">UT Austin Acceptable Use Policy</a>.
+                        The university will prosecute violators to the full extent of the law. The university is not
+                        responsible for services provided by third parties authorized to use the university's
+                        authentication service.
+                    </p>
+                    <p class="footer">
+                        &copy; 2017 The University of Texas at Austin |
+                        <a href="http://www.utexas.edu/web-privacy-policy">Web Privacy Policy</a> |
+                        <a href="http://www.utexas.edu/web-accessibility-policy">Web Accessibility Policy</a><br /><br />
+                        Version: 2016.1.5
+                    </p>
+                </div> <!-- license_info -->
+            </div> <!--end of content -->
+        </div> <!--end of container -->
+    </body>
+
+</html>
+
